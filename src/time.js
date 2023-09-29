@@ -1,5 +1,3 @@
-const seconds = 123456;
-console.log(time(seconds)); // Resultado: "1d 10h 17m 36s"
 const HOURS_IN_SECONDS = 3600;
 const DAYS_IN_SECONDS = 24 * HOURS_IN_SECONDS;
 const WEEKS_IN_SECONDS = 7 * DAYS_IN_SECONDS;
@@ -25,7 +23,7 @@ function time(seconds) {
 
   for (let i = 0; i < loopText.length; i++) {
     if (timeStack[i] > 0 && previousFlag) {
-      result += $;{timeStack[i]}$;{loopText[i]} ;
+      result += `${timeStack[i]}${loopText[i]} `;
     } else {
       previousFlag = false;
     }
@@ -33,3 +31,5 @@ function time(seconds) {
 
   return result.trim();
 }
+
+module.exports = time
